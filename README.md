@@ -21,7 +21,7 @@ cd Maritime-Optimization
 
 It is recommended to use a virtual environment. Install the packages listed in the requirements.txt file:
 
-Bash
+
 
 
 pip install -r requirements.txt
@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 The source code is provided as a comprehensively commented Jupyter Notebook. Launch Jupyter and open the main notebook:
 
-Bash
+
 
 
 jupyter notebook notebooks/JIT_Arrival_and_Fuel_Consumption_for_Ships.ipynb

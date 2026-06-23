@@ -21,6 +21,9 @@ To accurately assess weather-induced resistance, environmental variables are dyn
 * **Wind Speed & Direction (UGRD, VGRD):** Used to calculate aerodynamic loads, heavily impacting Container ships due to their high freeboards.
 * **Ocean Currents (UO, VO):** Vector components that either assist or resist the actual Speed Over Ground (SOG).
 
+### Spatio-Temporal Data Fusion
+A critical technical milestone of this project is the spatio-temporal fusion of highly heterogeneous data sources. The pipeline does not merely append data; it dynamically merges the continuous vector trajectories of the vessels (AIS) with the multi-dimensional meteorological grids (Copernicus). By applying spatial and temporal interpolation (matching exact timestamps, latitudes, and longitudes within the defined bounding boxes), the environmental constraints (wind, waves, currents) are mapped precisely onto each point of the vessel's route. This fusion creates a robust, multi-modal dataset that perfectly aligns vessel kinematics with environmental dynamics.
+
 ### Physics-Informed Target Generation (THETIS-MRV)
 To avoid purely theoretical simulations, multi-year (2018-2023) data from the EMSA THETIS-MRV system were utilized. By applying strict vessel filters (Container Ships only) and dropping anomalous records, a realistic baseline for hourly fuel consumption (Tons/Hour) was established. This baseline acts as the Ground Truth. The ML algorithms do not predict arbitrary values; instead, they act as a Virtual Sensor. They learn to dynamically adjust this average baseline based on real-time SOG and local meteorological resistance, mirroring true hydrodynamic laws.
 
